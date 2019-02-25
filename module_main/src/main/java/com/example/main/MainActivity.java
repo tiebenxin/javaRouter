@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 
 /**
@@ -14,31 +15,35 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-  private Button bt_login;
-  private Button bt_chat;
+    private Button bt_login;
+    private Button bt_chat;
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    bt_login = findViewById(R.id.bt_login);
-    bt_chat = findViewById(R.id.bt_chat);
-    bt_login.setOnClickListener(this);
-    bt_chat.setOnClickListener(this);
-  }
-
-  @Override
-  public void onClick(View v) {
-    int i = v.getId();
-    if (i == R.id.bt_chat) {
-      toLogin();
-    } else if (i == R.id.bt_login) {
-      toLogin();
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        bt_login = findViewById(R.id.bt_login);
+        bt_chat = findViewById(R.id.bt_chat);
+        bt_login.setOnClickListener(this);
+        bt_chat.setOnClickListener(this);
     }
-  }
 
-  public void toLogin() {
-    ARouter.getInstance().build("/login/login").navigation();
-  }
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.bt_chat) {
+            toChat();
+        } else if (i == R.id.bt_login) {
+            toLogin();
+        }
+    }
+
+    public void toLogin() {
+        ARouter.getInstance().build("/login/login").navigation();
+    }
+
+    public void toChat() {
+        ARouter.getInstance().build("/chat/chat").navigation();
+    }
 
 }

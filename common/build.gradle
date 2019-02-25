@@ -1,17 +1,23 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
 
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        /**
+         * 默认dev环境
+         */
+        buildConfigField("String", "API_HOST", "\"${rootProject.ext.host_default}\"")
 
     }
 
@@ -25,12 +31,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-
     compile 'com.alibaba:arouter-api:1.4.0'
-
 }
