@@ -34,6 +34,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.dependencies["support-v4"]
     implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["recyclerview"]
     testImplementation 'junit:junit:4.12'
     compile 'com.alibaba:arouter-api:1.4.0'
 }
