@@ -12,7 +12,7 @@ import com.example.mychat.bean.FirstBean;
 import com.example.mychat.multi.ItemViewBinder;
 
 /**
- * Created by LL130386 on 2019/4/4.
+ * Created by Liszt on 2019/4/4.
  */
 
 public class AdapterFirst extends ItemViewBinder<FirstBean, AdapterFirst.HV> {

@@ -1,7 +1,7 @@
 package com.example.common.bean;
 
 /**
- * Created by LL130386 on 2018/9/22.
+ * Created by Liszt on 2018/9/22.
  */
 
 public class UserBean {

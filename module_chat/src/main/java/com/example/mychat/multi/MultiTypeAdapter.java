@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by LL130386 on 2019/4/4.
+ * Created by Liszt on 2019/4/4.
  */
 
 public class MultiTypeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

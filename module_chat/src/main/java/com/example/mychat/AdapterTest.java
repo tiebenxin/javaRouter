@@ -11,7 +11,7 @@ import com.example.mychat.multi.IItemClickListener;
 import java.util.List;
 
 /**
- * Created by LL130386 on 2019/3/25.
+ * Created by Liszt on 2019/3/25.
  */
 
 public class AdapterTest extends RecyclerView.Adapter {
