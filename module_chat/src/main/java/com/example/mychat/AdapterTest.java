@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.mychat.multi.IItemClickListener;
+
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ import java.util.List;
 public class AdapterTest extends RecyclerView.Adapter {
 
     private final Context mContext;
+    private IItemClickListener listener;
 
     public AdapterTest(Context context) {
         mContext = context;
@@ -25,6 +28,10 @@ public class AdapterTest extends RecyclerView.Adapter {
     public void setData(List<String> l) {
         list = l;
         notifyDataSetChanged();
+    }
+
+    private void setListener(IItemClickListener l){
+        listener = l;
     }
 
     @Override
