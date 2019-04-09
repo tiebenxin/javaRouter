@@ -17,19 +17,21 @@ public class AppHostUtil {
     private static String connectHostApi;
 
     private final static String getConnectHostApi() {
-        if (isEmpty()) {
-            connectHostApi = BuildConfig.API_HOST;
-        }
-        if (isEmpty()) {
-            throw new NullPointerException("请检查config.gradle#host配置");
-        }
+//        if (isEmpty()) {
+//            connectHostApi = BuildConfig.API_HOST;
+//        }
+        connectHostApi = BuildConfig.API_HOST;
+
+//        if (isEmpty()) {
+//            throw new NullPointerException("请检查config.gradle#host配置");
+//        }
         return connectHostApi;
     }
 
     public final static String getHttpConnectHostApi() {
-        if (isEmpty()) {
+//        if (isEmpty()) {
             getConnectHostApi();
-        }
+//        }
         return HTTP + connectHostApi + PORT_8888;
     }
 

@@ -37,4 +37,13 @@ dependencies {
     implementation rootProject.ext.dependencies["recyclerview"]
     testImplementation 'junit:junit:4.12'
     compile 'com.alibaba:arouter-api:1.4.0'
+    api "com.google.code.gson:gson:$rootProject.ext.googleGsonVersion"
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
+    implementation files('libs/MBlog.jar')
 }

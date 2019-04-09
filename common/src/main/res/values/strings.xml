@@ -1,3 +1,4 @@
 <resources>
-  <string name="app_name">common</string>
+    <string name="app_name">common</string>
+    <string name="common_net_error_default">网络错误</string>
 </resources>
