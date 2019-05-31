@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.router"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
@@ -17,6 +17,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -32,4 +36,6 @@ dependencies {
         implementation project(':module_chat')
     }
     implementation project(':common')
+    implementation 'com.google.guava:guava:16.0.1'
+    implementation 'com.google.code.gson:gson:2.2.4'
 }

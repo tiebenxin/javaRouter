@@ -18,6 +18,9 @@ import com.example.mychat.springview.widget.SpringView;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Function;
+
 /**
  * Created by Liszt on 2019/2/25.
  */
@@ -25,10 +28,10 @@ import java.util.List;
 @Route(path = "/chat/chat")
 public class ChatActivity extends AppCompatActivity {
 
-    private List<Object> mDataList;
+    private List<String> mDataList;
     private SpringView springView;
     private int pullPosition = 0;
-    //    private AdapterTest adapterTest;
+    private AdapterTest adapterTest;
     private int loadPosition = 0;
     private RecyclerView recyclerView;
 
@@ -44,71 +47,72 @@ public class ChatActivity extends AppCompatActivity {
 
         initAdapter();
 
-
-//        adapterTest = new AdapterTest(this);
-//        adapterTest.setData(getDefaltData());
-//        recyclerView.setAdapter(adapterTest);
-
         initSpringView();
     }
 
     private void initAdapter() {
-        AdapterFirst adapterFirst = new AdapterFirst();
-        AdapterSecond adapterSecond = new AdapterSecond();
-
-        MultiTypeAdapter multiTypeAdapter = new MultiTypeAdapter();
-        multiTypeAdapter.register(FirstBean.class, adapterFirst);
-        multiTypeAdapter.register(String.class, adapterSecond);
-
-        multiTypeAdapter.setItems(getDefaltData());
-
-        recyclerView.setAdapter(multiTypeAdapter);
-
+        adapterTest = new AdapterTest(this);
+        adapterTest.setData(getDefaltData());
+        recyclerView.setAdapter(adapterTest);
     }
 
-    private List<Object> getDefaltData() {
-        mDataList = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
-            if (i % 3 == 0) {
-                String s = "title" + i;
-                mDataList.add(s);
-            } else {
-                FirstBean firstBean = new FirstBean();
-                firstBean.setName("Name" + i);
-                firstBean.setSex(i % 2);
-                System.out.println("性别=" + i % 2 + "--- i=" + i);
-                firstBean.setAge(i);
-                mDataList.add(firstBean);
-            }
-        }
-        return mDataList;
-    }
-
-//    private List<String> getDefaltData() {
-//        mDataList = new ArrayList<>();
-//        for (int i = 0; i < 20; i++) {
-//            String s = "这是第" + i + "个数据";
-//            mDataList.add(s);
+//    private void initAdapter() {
+//        AdapterFirst adapterFirst = new AdapterFirst();
+//        AdapterSecond adapterSecond = new AdapterSecond();
 //
+//        MultiTypeAdapter multiTypeAdapter = new MultiTypeAdapter();
+//        multiTypeAdapter.register(FirstBean.class, adapterFirst);
+//        multiTypeAdapter.register(String.class, adapterSecond);
+//
+//        multiTypeAdapter.setItems(getDefaltData());
+//
+//        recyclerView.setAdapter(multiTypeAdapter);
+//
+//    }
+
+//    private List<Object> getDefaltData() {
+//        mDataList = new ArrayList<>();
+//        for (int i = 0; i < 50; i++) {
+//            if (i % 3 == 0) {
+//                String s = "title" + i;
+//                mDataList.add(s);
+//            } else {
+//                FirstBean firstBean = new FirstBean();
+//                firstBean.setName("Name" + i);
+//                firstBean.setSex(i % 2);
+//                System.out.println("性别=" + i % 2 + "--- i=" + i);
+//                firstBean.setAge(i);
+//                mDataList.add(firstBean);
+//            }
 //        }
 //        return mDataList;
 //    }
 
+    private List<String> getDefaltData() {
+        mDataList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            String s = "这是第" + i + "个数据";
+            mDataList.add(s);
+
+        }
+        return mDataList;
+    }
+
     public void initSpringView() {
         springView.setHeader(new DefaultHeader(this));
         springView.setFooter(new DefaultFooter(this));
-//        springView.setListener(new SpringView.OnFreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                //下拉刷新
-//                onSpringRefresh();
-//            }
-//
-//            @Override
-//            public void onLoadMore() {
-//                onSpringLoadMore();
-//            }
-//        });
+        springView.setListener(new SpringView.OnFreshListener() {
+            @Override
+            public void onRefresh() {
+                //下拉刷新
+                onSpringRefresh();
+            }
+
+            @Override
+            public void onLoadMore() {
+                onSpringLoadMore();
+            }
+        });
 
     }
 
@@ -129,7 +133,7 @@ public class ChatActivity extends AppCompatActivity {
         pullPosition = pullPosition + 1;
         String s = "下拉刷新的第" + pullPosition + "个数据";
         mDataList.add(0, s);
-//        adapterTest.setData(mDataList);
+        adapterTest.setData(mDataList);
     }
 
     private void onSpringLoadMore() {
@@ -148,6 +152,11 @@ public class ChatActivity extends AppCompatActivity {
         loadPosition = loadPosition + 1;
         String s = "加载更多的第" + loadPosition + "个数据";
         mDataList.add(s);
-//        adapterTest.setData(mDataList);
+        adapterTest.setData(mDataList);
+    }
+
+    private void loadData() {
+
+
     }
 }

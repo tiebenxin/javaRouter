@@ -15,10 +15,9 @@ import retrofit2.http.Query;
 
 public class SystemApi {
 
-    public interface Api{
+    public interface Api {
         @POST("/xdata-proxy/v1/client/getAppVersion")
-        Observable<GetVersionInfoResult> getVersionInfo(@Query("appid") String appid,
-                                                        @Query("appclient") String appclient);
+        Observable<GetVersionInfoResult> getVersionInfo(@Query("appid") String appid, @Query("appclient") String appclient);
     }
 
     private Api api;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.common.api.demo.SystemApi;
 import com.example.common.api.http.FXRxSubscriberHelper;
@@ -26,6 +27,7 @@ import java.io.File;
  * Created by Liszt on 2018/9/22.
  */
 
+@Route(path = "/main/main")
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private Button bt_login;
