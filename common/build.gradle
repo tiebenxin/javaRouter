@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 26
@@ -28,6 +29,10 @@ android {
         }
     }
 
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -46,4 +51,8 @@ dependencies {
     api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
     api "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
     implementation files('libs/MBlog.jar')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

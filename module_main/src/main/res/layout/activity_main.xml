@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <Button
-    android:id="@+id/bt_login"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:onClick="true"
-    android:text="Login"
-    tools:ignore="OnClick"/>
+    <data>
 
-  <Button
-    android:id="@+id/bt_chat"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:onClick="true"
-    android:text="Chat"
-    tools:ignore="OnClick"/>
+    </data>
 
-  <Button
-      android:id="@+id/bt_check"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:onClick="true"
-      android:text="checkVersion"
-      tools:ignore="OnClick"/>
+    <com.example.main.wight.DragLayoutKt
+        android:id="@+id/dl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/view_left"
+            layout="@layout/layout_left" />
+
+        <com.example.main.wight.CustomLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="true"
+                android:text="Login"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/bt_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="true"
+                android:text="Chat"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/bt_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="true"
+                android:text="checkVersion"
+                tools:ignore="OnClick" />
+
+        </com.example.main.wight.CustomLinearLayout>
 
 
-</LinearLayout>
+    </com.example.main.wight.DragLayoutKt>
+</layout>

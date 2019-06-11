@@ -1,5 +1,6 @@
 package com.example.main;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -7,21 +8,17 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.common.api.demo.SystemApi;
-import com.example.common.api.http.FXRxSubscriberHelper;
-import com.example.common.bean.GetVersionInfoResult;
-import com.example.common.bean.VersionInfoBean;
 import com.example.common.dialog.CommenProgressDialog;
 import com.example.common.download.JsDownloadListerner;
 import com.example.common.okhttp.DownloadMananger;
-
-import java.io.File;
+import com.example.main.databinding.ActivityMainBinding;
 
 /**
  * Created by Liszt on 2018/9/22.
@@ -48,17 +45,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         }
     };
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bt_login = findViewById(R.id.bt_login);
         bt_chat = findViewById(R.id.bt_chat);
         bt_check = findViewById(R.id.bt_check);
         bt_login.setOnClickListener(this);
         bt_chat.setOnClickListener(this);
         bt_check.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         if (i == R.id.bt_chat) {
             toChat();
         } else if (i == R.id.bt_login) {
-            toLogin();
+//            toLogin();
+            binding.dlParent.toggle();
+
         } else if (i == R.id.bt_check) {
             check();
         }

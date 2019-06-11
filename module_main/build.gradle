@@ -3,6 +3,7 @@ if (isModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -31,6 +32,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled true
+    }
 
     sourceSets {
         main {
@@ -58,11 +62,8 @@ dependencies {
     implementation project(':common')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-//    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
-
-
-
+    //    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+    implementation files('libs/nineoldandroids-2.4.0.jar')
 }
 repositories {
     mavenCentral()

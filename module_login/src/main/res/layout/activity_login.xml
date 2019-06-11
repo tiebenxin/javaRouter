@@ -9,9 +9,24 @@
         android:layout_height="wrap_content"
         android:text="main" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Hello World!" />-->
+
+    <ImageView
+        android:id="@+id/iv_code"
+        android:layout_width="80dp"
+        android:layout_height="32dp" />
+
+    <com.example.common.wight.VerifyCodeView
+        android:id="@+id/iv_verify"
+        android:layout_width="60dp"
+        android:layout_height="32dp" />
+
+    <com.example.common.wight.VerifyKTView
+        android:id="@+id/iv_verifyKt"
+        android:layout_width="60dp"
+        android:layout_height="32dp" />
 
 </LinearLayout>
