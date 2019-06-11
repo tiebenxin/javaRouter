@@ -3,7 +3,7 @@ package com.example.common.netkt
 import java.io.Serializable
 
 /**
- * Created by LL130386 on 2019/6/5.
+ * Created by Liszt on 2019/6/5.
  */
 data class HomeBean(val issueList: ArrayList<Issue>, val nextPageUrl: String, val nextPublishTime: Long, val newestIssueType: String, val dialog: Any) {
     data class Issue(val releaseTime: Long, val type: String, val date: Long, val total: Int, val publishTime: Long, val itemList: ArrayList<Item>, var count: Int, val nextPageUrl: String) {

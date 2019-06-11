@@ -6,7 +6,7 @@
 
     </data>
 
-    <com.example.main.wight.DragLayoutKt
+    <com.example.main.wight.drag.DragLayoutKt
         android:id="@+id/dl_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
             android:id="@+id/view_left"
             layout="@layout/layout_left" />
 
-        <com.example.main.wight.CustomLinearLayout
+        <com.example.main.wight.drag.CustomLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
@@ -46,8 +46,8 @@
                 android:text="checkVersion"
                 tools:ignore="OnClick" />
 
-        </com.example.main.wight.CustomLinearLayout>
+        </com.example.main.wight.drag.CustomLinearLayout>
 
 
-    </com.example.main.wight.DragLayoutKt>
+    </com.example.main.wight.drag.DragLayoutKt>
 </layout>

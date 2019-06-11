@@ -6,7 +6,7 @@ import java.io.*
 import kotlin.reflect.KProperty
 
 /**
- * Created by LL130386 on 2019/6/5.
+ * Created by Liszt on 2019/6/5.
  */
 class Preference<T>(val name: String, private val default: T) {
     companion object {

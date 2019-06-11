@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * Created by LL130386 on 2019/6/5.
+ * Created by Liszt on 2019/6/5.
  */
 interface ApiService{
     /**

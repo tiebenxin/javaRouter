@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import java.util.Random;
 
 /**
- * Created by LL130386 on 2019/6/3.
+ * Created by Liszt on 2019/6/3.
  */
 
 public class RandomVerifyCode {

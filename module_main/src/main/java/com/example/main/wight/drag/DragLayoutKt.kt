@@ -1,4 +1,4 @@
-package com.example.main.wight
+package com.example.main.wight.drag
 
 import android.content.Context
 import android.graphics.Color
@@ -16,7 +16,7 @@ import com.example.main.R
 import com.nineoldandroids.view.ViewHelper
 
 /**
- * Created by LL130386 on 2019/6/6.
+ * Created by Liszt on 2019/6/6.
  */
 class DragLayoutKt(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
     private val TAG: String = DragLayoutKt::class.java.simpleName + "::"

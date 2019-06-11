@@ -15,7 +15,7 @@ import com.example.common.utils.DensityUtil;
 import java.security.SecureRandom;
 
 /**
- * Created by LL130386 on 2019/6/4.
+ * Created by Liszt on 2019/6/4.
  */
 
 public class VerifyCodeView extends View {

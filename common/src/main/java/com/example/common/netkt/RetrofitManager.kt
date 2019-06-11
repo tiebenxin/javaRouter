@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by LL130386 on 2019/6/5.
+ * Created by Liszt on 2019/6/5.
  */
 object RetrofitManager {
     private var client: OkHttpClient? = null

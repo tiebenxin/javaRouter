@@ -15,7 +15,7 @@
  */
 
 
-package com.example.main.wight;
+package com.example.main.wight.drag;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;

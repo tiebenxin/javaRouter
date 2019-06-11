@@ -1,4 +1,4 @@
-package com.example.main.wight
+package com.example.main.wight.drag
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,7 @@ import android.view.MotionEvent
 import android.widget.RelativeLayout
 
 /**
- * Created by LL130386 on 2019/6/6.
+ * Created by Liszt on 2019/6/6.
  */
 class CustomRelativeLayout(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
