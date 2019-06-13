@@ -313,7 +313,7 @@ class DragLayoutKt(context: Context, attrs: AttributeSet) : FrameLayout(context,
         super.onFinishInflate()
         if (isShowShadow) {
             iv_shadow = ImageView(context)
-            iv_shadow.setImageResource(R.mipmap.shadow)
+            iv_shadow.setImageResource(R.drawable.shadow)
             var lp: LayoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
             addView(iv_shadow, 1, lp)
         }

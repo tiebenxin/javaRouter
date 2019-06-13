@@ -240,9 +240,11 @@ public class SpringView extends ViewGroup {
                     //把内部控件的事件转发给本控件处理
                     isInControl = true;
                     event.setAction(MotionEvent.ACTION_CANCEL);
+                    System.out.println("重新设置ACTION_CANCEL");
                     MotionEvent ev2 = MotionEvent.obtain(event);
                     dispatchTouchEvent(event);
                     ev2.setAction(MotionEvent.ACTION_DOWN);
+                    System.out.println("重新设置ACTION_DOWN");
                     return dispatchTouchEvent(ev2);
                 }
                 break;
@@ -352,6 +354,7 @@ public class SpringView extends ViewGroup {
                 mLastX = x;
                 mLastY = y;
                 mActivePointerId = MotionEventCompat.getPointerId(ev, 0);
+                System.out.println("dealMulTouchEvent::" + "ACTION_DOWN--" + "mActivePointerId=" + mActivePointerId);
                 break;
             }
             case MotionEvent.ACTION_MOVE: {
@@ -367,6 +370,8 @@ public class SpringView extends ViewGroup {
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
                 mActivePointerId = MotionEvent.INVALID_POINTER_ID;
+                System.out.println("dealMulTouchEvent::" + "ACTION_UP or ACTION_CANCEL--" + "mActivePointerId=" + mActivePointerId);
+
                 break;
             case MotionEvent.ACTION_POINTER_DOWN: {
                 final int pointerIndex = MotionEventCompat.getActionIndex(ev);
@@ -375,6 +380,7 @@ public class SpringView extends ViewGroup {
                     mLastX = MotionEventCompat.getX(ev, pointerIndex);
                     mLastY = MotionEventCompat.getY(ev, pointerIndex);
                     mActivePointerId = MotionEventCompat.getPointerId(ev, pointerIndex);
+                    System.out.println("dealMulTouchEvent::" + "ACTION_POINTER_DOWN--" + "mActivePointerId=" + mActivePointerId);
                 }
                 break;
             }
@@ -386,6 +392,7 @@ public class SpringView extends ViewGroup {
                     mLastX = MotionEventCompat.getX(ev, newPointerIndex);
                     mLastY = MotionEventCompat.getY(ev, newPointerIndex);
                     mActivePointerId = MotionEventCompat.getPointerId(ev, newPointerIndex);
+                    System.out.println("dealMulTouchEvent::" + "ACTION_POINTER_UP--" + "mActivePointerId=" + mActivePointerId);
                 }
                 break;
             }

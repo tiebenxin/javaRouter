@@ -211,7 +211,7 @@ public class DragLayout extends FrameLayout {
         super.onFinishInflate();
         if (isShowShadow) {
             iv_shadow = new ImageView(context);
-            iv_shadow.setImageResource(R.mipmap.shadow);
+            iv_shadow.setImageResource(R.drawable.shadow);
             LayoutParams lp = new LayoutParams(MATCH_PARENT, MATCH_PARENT);
             addView(iv_shadow, 1, lp);
         }

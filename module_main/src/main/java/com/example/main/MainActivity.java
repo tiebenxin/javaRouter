@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     };
     private ActivityMainBinding binding;
+    private Button bt_switch;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,9 +55,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         bt_login = findViewById(R.id.bt_login);
         bt_chat = findViewById(R.id.bt_chat);
         bt_check = findViewById(R.id.bt_check);
+        bt_switch = findViewById(R.id.bt_switch);
         bt_login.setOnClickListener(this);
         bt_chat.setOnClickListener(this);
         bt_check.setOnClickListener(this);
+        bt_switch.setOnClickListener(this);
 
 
     }
@@ -66,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int i = v.getId();
         if (i == R.id.bt_chat) {
             toChat();
-        } else if (i == R.id.bt_login) {
-//            toLogin();
+        } else if (i == R.id.bt_switch) {
             binding.dlParent.toggle();
-
+        } else if (i == R.id.bt_login) {
+            toLogin();
         } else if (i == R.id.bt_check) {
             check();
         }

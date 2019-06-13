@@ -7,10 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.mychat.adapter.AdapterFirst;
-import com.example.mychat.adapter.AdapterSecond;
-import com.example.mychat.bean.FirstBean;
-import com.example.mychat.multi.MultiTypeAdapter;
+import com.example.common.wight.spring.container.CustomHeader;
+import com.example.common.wight.spring.listener.OnFreshListener;
+import com.example.common.wight.spring.widght.SpringViewkT;
 import com.example.mychat.springview.container.DefaultFooter;
 import com.example.mychat.springview.container.DefaultHeader;
 import com.example.mychat.springview.widget.SpringView;
@@ -18,8 +17,6 @@ import com.example.mychat.springview.widget.SpringView;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 
 /**
  * Created by Liszt on 2019/2/25.
@@ -29,7 +26,7 @@ import io.reactivex.functions.Function;
 public class ChatActivity extends AppCompatActivity {
 
     private List<String> mDataList;
-    private SpringView springView;
+    private SpringViewkT springView;
     private int pullPosition = 0;
     private AdapterTest adapterTest;
     private int loadPosition = 0;
@@ -99,9 +96,9 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     public void initSpringView() {
-        springView.setHeader(new DefaultHeader(this));
-        springView.setFooter(new DefaultFooter(this));
-        springView.setListener(new SpringView.OnFreshListener() {
+        springView.setHeader(new CustomHeader(this));
+//        springView.setFooter(new DefaultFooter(this));
+        springView.setListener(new OnFreshListener() {
             @Override
             public void onRefresh() {
                 //下拉刷新

@@ -102,7 +102,7 @@ public abstract class FXRxSubscriberHelper<T> extends RxSubscriberHelper<T> {
     }
 
     void log(String... messages) {
-        DLog.e(messages);
+        DLog.e((Object) messages);
     }
 
     @Override
